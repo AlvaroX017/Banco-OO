@@ -95,7 +95,7 @@ public class Main extends javax.swing.JFrame {
     
     private void depositoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_depositoActionPerformed
         String name = JOptionPane.showInputDialog("Digite seu nome:");
-
+        
         if(name!=null){
         cliente.setNome(name);
         
@@ -109,11 +109,19 @@ public class Main extends javax.swing.JFrame {
             modificarSaldo(decision);
             
             corrente.sacar(getValue());
-        }    
-    
-		
+            
+        decision = JOptionPane.showOptionDialog(null, "Você gostaria fazer uma transferência para sua conta poupança?", "ESCOLHA", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+            modificarSaldo(decision);
+        
+            corrente.transferir(getValue(), poupanca);
+            
+            
         corrente.imprimirExtrato();
         poupanca.imprimirExtrato();
+        
+        }  else{
+            JOptionPane.showMessageDialog(null, "Você deve ter um nome para criar a conta.");
+        }  
     }//GEN-LAST:event_depositoActionPerformed
 
     /**
