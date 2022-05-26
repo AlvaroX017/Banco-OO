@@ -45,7 +45,7 @@ public abstract class Conta implements IConta{
             JOptionPane.showMessageDialog(null, "Titular: " + this.cliente.getNome() 
                 +"\n"+"Agencia: "+ this.agencia
                 +"\n"+"Numero: "+ this.numero
-                +"\n"+"Saldo: "+ String.format("%.2f", this.saldo), "              EXTRATO", 1, null);
+                +"\n"+"Saldo: "+ String.format("%.2f", this.saldo), "   EXTRATO", 1, null);
               
 	}
 }
